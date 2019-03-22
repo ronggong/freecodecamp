@@ -38,7 +38,7 @@ app.get('/api/shorturl/new/:urlToShorten(*)', (req, res, next) => {
 
 // redirect through short url
 // if /api/shorturl/:URLToForward not working
-app.get('/:URLToForward', (req, res, next) => {
+app.get('/api/shorturl/:URLToForward', (req, res, next) => {
     var sURL = req.params.URLToForward;
     shortURL.findOne({shorterURL: sURL}, (err, data) => {
         if (err) return res.send("Error reading the mongoDB.");
